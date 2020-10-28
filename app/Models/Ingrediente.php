@@ -9,5 +9,4 @@ class Ingrediente extends Model
 {
     use HasFactory;
     protected $table = 'ingredientes';
-    protected $primaryKey = 'ingre_id';
 }
