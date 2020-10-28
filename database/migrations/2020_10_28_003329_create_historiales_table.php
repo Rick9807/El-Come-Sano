@@ -24,7 +24,7 @@ class CreateHistorialesTable extends Migration
             $table->string('his_ejerc', 30);
             $table->string('his_vegano', 5);
             $table->string('his_diabetes', 5);
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

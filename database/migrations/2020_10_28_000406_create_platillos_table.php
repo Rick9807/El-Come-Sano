@@ -21,7 +21,7 @@ class CreatePlatillosTable extends Migration
             $table->string('plat_vegano', 5);
             $table->float('plat_carbohidratos',8,2);
             $table->float('plat_colesterol',8,2);
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

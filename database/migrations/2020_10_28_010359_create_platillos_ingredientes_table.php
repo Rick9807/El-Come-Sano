@@ -16,7 +16,8 @@ class CreatePlatillosIngredientesTable extends Migration
         Schema::create('platillos_ingredientes', function (Blueprint $table) {
             $table->foreignId('plat_id')->references('id')->on('platillos');
             $table->foreignId('ingre_id')->references('id')->on('ingredientes');
-            //$table->timestamps();
+            $table->primary(['plat_id', 'ingre_id']);
+            $table->timestamps();
         });
     }
 

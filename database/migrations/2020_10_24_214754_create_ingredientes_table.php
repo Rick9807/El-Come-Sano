@@ -23,7 +23,7 @@ class CreateIngredientesTable extends Migration
             $table->float('ingre_azucares', 8, 2);
             $table->float('ingre_carbohidratos', 8, 2);
             $table->float('ingre_colesterol', 8, 2);
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

@@ -21,11 +21,9 @@ class CreateUsuariosTable extends Migration
             $table->string('us_email', 80);
             $table->string('us_pass', 30);
             $table->date('us_date');
-            $table->timestamp('us_fecha_reg', 0);
-            $table->timestamp('us_fecha_upd', 0);
             $table->string('us_genero', 20);
             $table->string('plat_img', 100);
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

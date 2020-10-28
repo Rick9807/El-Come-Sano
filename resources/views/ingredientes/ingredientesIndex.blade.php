@@ -24,8 +24,8 @@
         </tr>
         @foreach ($consulta as $ingrediente)
             <tr>
-                <td>{{ $ingrediente->ingre_id }}</td>
-                <td> <a href="/ingredientes/{{$ingrediente->ingre_id}}"> {{ $ingrediente->ingre_nombre }}</a> </td>
+                <td>{{ $ingrediente->id }}</td>
+                <td> <a href="/ingredientes/{{$ingrediente->id}}"> {{ $ingrediente->ingre_nombre }}</a> </td>
                 <td>{{ $ingrediente->ingre_tipo }}</td>
                 <td>{{ $ingrediente->ingre_marca }}</td>
                 <td>{{ $ingrediente->ingre_vega }}</td>

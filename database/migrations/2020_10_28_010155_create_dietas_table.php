@@ -16,7 +16,8 @@ class CreateDietasTable extends Migration
         Schema::create('dietas', function (Blueprint $table) {
             $table->foreignId('plat_id')->references('id')->on('platillos');
             $table->foreignId('us_id')->references('id')->on('usuarios');
-            //$table->timestamps();
+            $table->primary(['plat_id', 'us_id']);
+            $table->timestamps();
         });
     }
 

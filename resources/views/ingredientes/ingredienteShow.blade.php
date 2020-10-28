@@ -24,7 +24,7 @@
         </tr>
         
         <tr>
-            <td>{{ $ingrediente->ingre_id }}</td>
+            <td>{{ $ingrediente->id }}</td>
             <td>{{ $ingrediente->ingre_nombre }}</td>
             <td>{{ $ingrediente->ingre_tipo }}</td>                
             <td>{{ $ingrediente->ingre_marca }}</td>

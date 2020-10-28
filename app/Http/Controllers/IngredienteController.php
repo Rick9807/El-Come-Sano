@@ -39,8 +39,23 @@ class IngredienteController extends Controller
     public function store(Request $request)
     {
         //Recibir datos
-        //Valido datos
+        //dd($request->all());
+
+        //Validar datos
+        $request->validate([
+            'ingre_nombre' => 'required|string',
+            'ingre_tipo' => 'required|string',
+            //'ingre_marca' => 'required|string',
+            'ingre_vega' => 'required|string|max:2|min:2',
+            'ingre_cal' => 'required|numeric',
+            'ingre_azucares' => 'required|numeric',
+            'ingre_carbohidratos' => 'required|numeric',
+            'ingre_colesterol' => 'required|numeric',
+        ]);
+
         //Guardar en DB
+        Ingrediente::create($request->all());
+
         //Redireccionar
         return redirect('/ingredientes');
     }
