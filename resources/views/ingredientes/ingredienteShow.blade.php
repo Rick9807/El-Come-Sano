@@ -8,7 +8,9 @@
 </head>
 <body>
     <h1>Ingrediente</h1>
-    <a href='/ingredientes'>Regresar</a>
+    <!--<a href="/ingredientes/{{ $ingrediente->id }}/edit">Editar ingrediente</a> -->
+    <a href={{ action([\App\Http\Controllers\IngredienteController::class, 'index']) }}>Regresar</a>
+    <a href="{{ route('ingredientes.edit', [$ingrediente->id]) }}">Editar ingrediente</a>
 
     <table>
         <tr>

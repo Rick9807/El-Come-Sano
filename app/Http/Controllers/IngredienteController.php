@@ -53,7 +53,9 @@ class IngredienteController extends Controller
             'ingre_colesterol' => 'required|numeric',
         ]);
 
+
         //Guardar en DB
+        $request->merge(['ingre_marca' => $request->ingre_marca ?? '']);
         Ingrediente::create($request->all());
 
         //Redireccionar
@@ -79,7 +81,7 @@ class IngredienteController extends Controller
      */
     public function edit(Ingrediente $ingrediente)
     {
-        //
+        return view('ingredientes.ingredientesCreate', compact('ingrediente'));
     }
 
     /**

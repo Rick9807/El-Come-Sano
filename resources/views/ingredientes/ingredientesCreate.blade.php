@@ -8,34 +8,56 @@
 </head>
 <body>
     <h1>Agregar ingrediente</h1>
+    
     <form action="/ingredientes" method="POST">
         @csrf
         <label for="ingre_nombre">Nombre</label>
-        <input type="text" name="ingre_nombre"> <br><br>
+        <input type="text" name="ingre_nombre" value="{{ old('ingre_nombre') }}"> <br>
+        @error('ingre_nombre')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror <br>
 
         <label for="ingre_tipo">Tipo</label>
-        <input type="text" name="ingre_tipo"> <br><br>
+        <input type="text" name="ingre_tipo" value="{{ old('ingre_tipo') }}"> <br>
+        @error('ingre_tipo')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror <br>
 
         <label for="ingre_marca">Marca</label>
-        <input type="text" name="ingre_marca"> <br>
+        <input type="text" name="ingre_marca" value="{{ old('ingre_marca') }}"> <br>
 
         <p>Vegano</p>
-        <input type="radio" id="si_vegano" name="ingre_vega" value="Si">
+        <input type="radio" id="si_vegano" name="ingre_vega" value="Si" >
         <label for="si_vegano">Si</label>
         <input type="radio" id="no_vegano" name="ingre_vega" value="No">
-        <label for="no_vegano">No</label> <br><br>
+        <label for="no_vegano">No</label> <br>
+        @error('ingre_vega')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror <br>
 
         <label for="ingre_cal">Calorias</label>
-        <input type="number" step=0.01 name="ingre_cal"> <br><br>
+        <input type="number" step=0.01 name="ingre_cal" value="{{ old('ingre_cal') }}"> <br>
+        @error('ingre_cal')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror <br>
 
         <label for="ingre_azucares">Azucares</label>
-        <input type="number" step=0.01 name="ingre_azucares"> <br><br>
+        <input type="number" step=0.01 name="ingre_azucares" value="{{ old('ingre_azucares') }}"> <br>
+        @error('ingre_azucares')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror <br>
 
         <label for="ingre_carbohidratos">Carbohidratos</label>
-        <input type="number" step=0.01 name="ingre_carbohidratos"> <br><br>
+        <input type="number" step=0.01 name="ingre_carbohidratos" value="{{ old('ingre_carbohidratos') }}"> <br>
+        @error('ingre_carbohidratos')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror <br>
 
         <label for="ingre_colesterol">Colesterol</label>
-        <input type="number" step=0.01 name="ingre_colesterol"> <br><br>
+        <input type="number" step=0.01 name="ingre_colesterol"value="{{ old('ingre_colesterol') }}"> <br>
+        @error('ingre_colesterol')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror <br>
 
         <br>
         <button type="submit">Enviar</button>
