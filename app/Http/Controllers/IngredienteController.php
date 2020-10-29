@@ -93,7 +93,25 @@ class IngredienteController extends Controller
      */
     public function update(Request $request, Ingrediente $ingrediente)
     {
-        //
+        //Recibir datos
+        //dd($request->all(), $request->)except('_method','_token');
+        
+        //Validar datos
+        $request->validate([
+            'ingre_nombre' => 'required|string',
+            'ingre_tipo' => 'required|string',
+            //'ingre_marca' => 'required|string',
+            'ingre_vega' => 'required|string|max:2|min:2',
+            'ingre_cal' => 'required|numeric',
+            'ingre_azucares' => 'required|numeric',
+            'ingre_carbohidratos' => 'required|numeric',
+            'ingre_colesterol' => 'required|numeric',
+        ]);
+
+        //Guardar datos en BD
+        Ingrediente::where('id', $ingrediente->id)->update($request->except('_method','_token'));
+
+        return redirect()->route('ingredientes.show', [$ingrediente]);
     }
 
     /**
@@ -104,6 +122,7 @@ class IngredienteController extends Controller
      */
     public function destroy(Ingrediente $ingrediente)
     {
-        //
+        $ingrediente->delete();
+        return redirect()->route('ingredientes.index');
     }
 }

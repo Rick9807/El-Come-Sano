@@ -12,6 +12,12 @@
     <a href={{ action([\App\Http\Controllers\IngredienteController::class, 'index']) }}>Regresar</a>
     <a href="{{ route('ingredientes.edit', [$ingrediente->id]) }}">Editar ingrediente</a>
 
+    <form action="{{ route('ingredientes.destroy', [$ingrediente]) }}", method='POST'>
+        @method('DELETE')
+        @csrf
+        <button type="submit">Eliminar</button>
+    </form>
+
     <table>
         <tr>
             <th>ID</th>
@@ -21,7 +27,7 @@
             <th>Vegano</th>
             <th>Azucares</th>
             <th>Calorias</th>
-            <th>Carbhidratos</th>
+            <th>Carbohidratos</th>
             <th>Colesterol</th>
         </tr>
         

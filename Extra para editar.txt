@@ -1,4 +1,4 @@
-<!--@if (isset($ingrediente ?? ''))
+<!--@if (isset($ingrediente))
         <form action="{{ route('ingredientes.update', [$ingrediente ?? '']) }}" method="POST">
     @else
         <form action="{{ route('ingredientes.store') }}" method="POST"> 
@@ -6,12 +6,12 @@
 
 
 <!--
-    {{ $ingrediente ?? ''->ingre_nombre }}
-    {{ $ingrediente ?? ''->ingre_tipo }}
-     {{ $ingrediente ?? ''->ingre_marca }}
-     {{ $ingrediente ?? ''->ingre_vega }}
-      {{ $ingrediente ?? ''->ingre_cal }}
-       {{ $ingrediente ?? ''->ingre_azucares }}
-        {{ $ingrediente ?? ''->ingre_carbohidratos }}
-         {{ $ingrediente ?? ''->ingre_colesterol }}
+    {{ $ingrediente->ingre_nombre }}
+    {{ $ingrediente->ingre_tipo }}
+     {{ $ingrediente->ingre_marca }}
+     {{ $ingrediente->ingre_vega }}
+      {{ $ingrediente->ingre_cal }}
+       {{ $ingrediente->ingre_azucares }}
+        {{ $ingrediente->ingre_carbohidratos }}
+         {{ $ingrediente->ingre_colesterol }}
     -->

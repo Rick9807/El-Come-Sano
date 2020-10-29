@@ -19,7 +19,7 @@
             <th>Vegano</th>
             <th>Azucares</th>
             <th>Calorias</th>
-            <th>Carbhidratos</th>
+            <th>Carbohidratos</th>
             <th>Colesterol</th>
         </tr>
         @foreach ($consulta as $ingrediente)
