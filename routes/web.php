@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Ingrediente;
 use App\Http\Controllers\IngredienteController;
 use App\Http\Controllers\PlatilloController;
 
@@ -19,9 +20,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/inicio', function () {
+  $consulta = Ingrediente::get();
+
+  return view('ingredientes.inicio', compact('consulta'));
+});
+
 //CRUD ingredientes
 Route::resource('ingredientes', IngredienteController::class);
-Route::resource('platillos',PlatilloController::class);
+Route::resource('platillos', PlatilloController::class);
 
 
 /*Route::get('/ingredientes', function () {
