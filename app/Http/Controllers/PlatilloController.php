@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Platillo;
+use App\Models\Ingrediente;
 use Illuminate\Http\Request;
 
 class PlatilloController extends Controller
@@ -25,7 +26,8 @@ class PlatilloController extends Controller
      */
     public function create()
     {
-        return view('platillos/platillosCreate');
+        $consulta = Ingrediente::get();
+        return view('platillos/platillosCreate', compact('consulta'));
     }
 
     /**

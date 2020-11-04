@@ -59,6 +59,14 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror <br>
 
+            @if (isset($consulta))
+                <label for="plat_ingredientes">Ingredientes</label><br>
+                @foreach ($consulta as $ingrediente)
+                    <input type="checkbox" id="{{$ingrediente->id}}" name="plat_ingredientes[]" value="{{$ingrediente->id}}">
+                    <label for="{{$ingrediente->id}}">{{$ingrediente->ingre_nombre}}</label><br>
+                @endforeach
+            @endif
+
             <br>
             <button type="submit">Enviar</button>
         </form>
