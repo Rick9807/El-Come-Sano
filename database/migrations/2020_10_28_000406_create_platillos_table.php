@@ -15,6 +15,7 @@ class CreatePlatillosTable extends Migration
     {
         Schema::create('platillos', function (Blueprint $table) {
             $table->id();
+            $table->string('plat_nombre', 40);
             $table->float('plat_cal',8,2);
             $table->float('plat_azucares',8,2);
             $table->string('plat_desc', 255);

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IngredienteController;
+use App\Http\Controllers\PlatilloController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', function () {
 
 //CRUD ingredientes
 Route::resource('ingredientes', IngredienteController::class);
+Route::resource('platillos',PlatilloController::class);
 
 
 /*Route::get('/ingredientes', function () {
