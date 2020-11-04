@@ -39,9 +39,9 @@
             <input type="text" name="plat_desc" value="{{ old('plat_desc') ?? $platillo->plat_desc ?? ''}}"> <br>
 
             <p>Vegano</p>
-            <input type="radio" id="si_vegano" name="plat_vega" value="Si" {{ old('plat_vega') == 'Si' ? 'checked' : '' }} {{ isset($platillo) && $platillo->plat_vega == 'Si' ? 'checked' : ''}}>
+            <input type="radio" id="si_vegano" name="plat_vegano" value="Si" {{ old('plat_vegano') == 'Si' ? 'checked' : '' }} {{ isset($platillo) && $platillo->plat_vegano == 'Si' ? 'checked' : ''}}>
             <label for="si_vegano">Si</label>
-            <input type="radio" id="no_vegano" name="plat_vega" value="No" {{ old('plat_vega') == 'No' ? 'checked' : '' }} {{ isset($platillo) && $platillo->plat_vega == 'No' ? 'checked' : ''}}>
+            <input type="radio" id="no_vegano" name="plat_vegano" value="No" {{ old('plat_vegano') == 'No' ? 'checked' : '' }} {{ isset($platillo) && $platillo->plat_vegano == 'No' ? 'checked' : ''}}>
             <label for="no_vegano">No</label> <br>
             @error('plat_vega')
                 <div class="alert alert-danger">{{ $message }}</div>

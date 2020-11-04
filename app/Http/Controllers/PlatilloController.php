@@ -58,7 +58,7 @@ class PlatilloController extends Controller
      */
     public function show(Platillo $platillo)
     {
-        return view('platillos/platilloShow', compact('platillo'));
+        return view('platillos/platillosShow', compact('platillo'));
     }
 
     /**
@@ -105,6 +105,6 @@ class PlatilloController extends Controller
     public function destroy(Platillo $platillo)
     {
         $platillo->delete();
-        return redirect()->route('platillo.index');
+        return redirect()->route('platillos.index');
     }
 }
