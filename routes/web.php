@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Ingrediente;
 use App\Http\Controllers\IngredienteController;
 use App\Http\Controllers\PlatilloController;
+use App\Http\Controllers\HistorialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,7 @@ Route::get('/inicio', function () {
 //CRUD ingredientes
 Route::resource('ingredientes', IngredienteController::class)->middleware(['auth:sanctum']);
 Route::resource('platillos', PlatilloController::class);
-
+Route::resource('historiales', HistorialController::class);
 
 /*Route::get('/ingredientes', function () {
   
