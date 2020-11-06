@@ -27,7 +27,7 @@ Route::get('/inicio', function () {
 });
 
 //CRUD ingredientes
-Route::resource('ingredientes', IngredienteController::class);
+Route::resource('ingredientes', IngredienteController::class)->middleware(['auth:sanctum']);
 Route::resource('platillos', PlatilloController::class);
 
 
@@ -63,3 +63,7 @@ Route::get('/ingredientes/{ingrediente}', [IngredienteController::class, 'show']
 //Actualizar registro
 
 //Eliminar ingrediente
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
