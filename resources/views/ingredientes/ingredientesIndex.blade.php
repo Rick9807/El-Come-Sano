@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.table')
 
 <!--<!DOCTYPE html>
 <html lang="es">
@@ -11,8 +11,8 @@
 <body> -->
 @section('titulo')
     <h1>Ingredientes</h1>
+    <a href='/ingredientes/create'>Agregar nuevo ingrediente</a>
 @endsection
-    <!--<a href='/ingredientes/create'>Agregar nuevo ingrediente</a>-->
 
     <!--<table>-->
     @section('tabla_cabecera')
@@ -41,12 +41,13 @@
                 <td>{{ $ingrediente->ingre_cal }}</td>
                 <td>{{ $ingrediente->ingre_carbohidratos }}</td>
                 <td>{{ $ingrediente->ingre_colesterol }}</td>
+                
             </tr>
         @endforeach
     @endsection
 
     <!--</table>-->
 
-<!--</body>-->
+<!--</body>
 
 </html> -->

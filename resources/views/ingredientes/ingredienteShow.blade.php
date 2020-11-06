@@ -1,12 +1,15 @@
-<!DOCTYPE html>
+@extends('layouts.table')
+
+<!--<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!--<meta name="viewport" content="width-devise-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <meta name="viewport" content="width-devise-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ingredientes</title>
 </head>
-<body>
+<body> -->
+@section('titulo')
     <h1>Ingrediente</h1>
     <!--<a href="/ingredientes/{{ $ingrediente->id }}/edit">Editar ingrediente</a> -->
     <a href={{ action([\App\Http\Controllers\IngredienteController::class, 'index']) }}>Regresar</a>
@@ -17,8 +20,9 @@
         @csrf
         <button type="submit">Eliminar</button>
     </form>
+@endsection
 
-    <table>
+@section('tabla_cabecera')
         <tr>
             <th>ID</th>
             <th>Nombre</th>
@@ -30,7 +34,9 @@
             <th>Carbohidratos</th>
             <th>Colesterol</th>
         </tr>
-        
+@endsection
+
+@section('tabla_contenido')
         <tr>
             <td>{{ $ingrediente->id }}</td>
             <td>{{ $ingrediente->ingre_nombre }}</td>
@@ -42,9 +48,8 @@
             <td>{{ $ingrediente->ingre_carbohidratos }}</td>
             <td>{{ $ingrediente->ingre_colesterol }}</td>
         </tr>
+@endsection
 
-    </table>
+<!--</body>
 
-</body>
-
-</html>
+</html> -->

@@ -1,14 +1,20 @@
-<!DOCTYPE html>
+@extends('layouts.blank')
+
+<!--<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!--<meta name="viewport" content="width-devise-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <meta name="viewport" content="width-devise-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
     <title>Ingredientes</title>
 </head>
-<body>
-    <h1>Agregar ingrediente</h1>
+<body> -->
 
+@section('titulo')
+    <h1>Agregar ingrediente</h1>
+@endsection
+
+@section('contenido')
     @if (isset($ingrediente))
         <form action="{{ route('ingredientes.update', [$ingrediente]) }}" method="POST">
             @method('patch')
@@ -70,6 +76,7 @@
         </form>
 
         <a href="{{ route('ingredientes.index') }}">Cancelar</a>
-</body>
+@endsection
+<!--</body>
 
-</html>
+</html>-->
