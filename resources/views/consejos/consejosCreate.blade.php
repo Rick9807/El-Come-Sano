@@ -16,8 +16,8 @@
         <form action="{{ route('consejos.store') }}" method="POST"> 
     @endif
             @csrf
-            <label for="plat_id">Platillo</label>
-            <select name="plat_id">
+            <label for="platillo_id">Platillo</label>
+            <select name="platillo_id">
                  @foreach ($platillos as $platillo)
                     <option value="{{ $platillo->id }}">{{ $platillo->plat_nombre }}</option>
                  @endforeach

@@ -17,7 +17,7 @@ class ConsejoController extends Controller
     {
         $consejos = Consejo::all();
         
-        dd($consejos->platillos);
+        //dd($consejos[0]->platillo);
         return view('consejos.consejosIndex', compact('consejos'));
     }
 
@@ -47,7 +47,7 @@ class ConsejoController extends Controller
 
         $consejo = New Consejo();
         $consejo->cons_contenido = $request->cons_contenido;
-        $consejo->plat_id = $request->plat_id;
+        $consejo->platillo_id = $request->platillo_id;
 
         //Guardar en DB
         $consejo->save();

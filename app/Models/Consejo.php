@@ -10,7 +10,7 @@ class Consejo extends Model
     use HasFactory;
     //protected $fillable = ['plat_id', 'cons_contenido'];
 
-    public function platillos(){
-        return $this-belongsTo(Platillo::class, 'id');
+    public function platillo(){
+        return $this->belongsTo(Platillo::class);
     }
 }

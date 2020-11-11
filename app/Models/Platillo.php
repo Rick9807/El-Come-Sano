@@ -11,7 +11,7 @@ class Platillo extends Model
     protected $table = 'platillos';
     protected $fillable = ['plat_nombre', 'plat_desc', 'plat_vegano', 'plat_cal', 'plat_azucares', 'plat_carbohidratos', 'plat_colesterol'];
 
-    public function consejos(){
-        return $this-hasMany(Consejo::class, 'plat_id');
+    public function consejo(){
+        return $this->hasMany(Consejo::class);
     }
 }

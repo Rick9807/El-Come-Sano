@@ -15,7 +15,7 @@ class CreateConsejosTable extends Migration
     {
         Schema::create('consejos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('plat_id')->references('id')->on('platillos');
+            $table->foreignId('platillo_id');
             $table->string('cons_contenido', 255);
             $table->timestamps();
         });

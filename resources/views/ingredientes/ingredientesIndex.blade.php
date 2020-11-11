@@ -11,7 +11,7 @@
 <body> -->
 @section('titulo')
     <h1>Ingredientes</h1>
-    <a href='/ingredientes/create'>Agregar nuevo ingrediente</a>
+    <a href='/ingredientes/create' class='d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm'>Agregar nuevo ingrediente</a>
 @endsection
 
     <!--<table>-->

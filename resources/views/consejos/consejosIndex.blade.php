@@ -22,7 +22,7 @@
                 <tr>
                     <td>{{ $consejo->id }}</td>
                     <td>{{ $consejo->cons_contenido }}</td>
-                    <td>{{ $consejo->platillo }}</td>
+                    <td>{{ $consejo->platillo->plat_nombre }}</td>
                 </tr>
             @endforeach
         </tbody>
