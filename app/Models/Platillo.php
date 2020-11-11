@@ -10,4 +10,8 @@ class Platillo extends Model
     use HasFactory;
     protected $table = 'platillos';
     protected $fillable = ['plat_nombre', 'plat_desc', 'plat_vegano', 'plat_cal', 'plat_azucares', 'plat_carbohidratos', 'plat_colesterol'];
+
+    public function consejos(){
+        return $this-hasMany(Consejo::class, 'plat_id');
+    }
 }

@@ -5,6 +5,7 @@ use App\Models\Ingrediente;
 use App\Http\Controllers\IngredienteController;
 use App\Http\Controllers\PlatilloController;
 use App\Http\Controllers\HistorialController;
+use App\Http\Controllers\ConsejoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::get('/inicio', function () {
 Route::resource('ingredientes', IngredienteController::class)->middleware(['auth:sanctum']);
 Route::resource('platillos', PlatilloController::class);
 Route::resource('historiales', HistorialController::class);
+Route::resource('consejos', ConsejoController::class);
 
 /*Route::get('/ingredientes', function () {
   

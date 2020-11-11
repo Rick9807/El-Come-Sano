@@ -46,7 +46,7 @@ class HistorialController extends Controller
             'his_diabetes' => 'required|string',
         ]);
 
-        $request->merge(['his_marca' => $request->his_marca ?? '']);
+        //$request->merge(['his_marca' => $request->his_marca ?? '']);
         Historial::create($request->all());
     }
 
