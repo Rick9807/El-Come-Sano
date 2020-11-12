@@ -308,7 +308,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{ route('profile.show') }}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -402,7 +402,15 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <form method="POST" action="{{ route('logout') }}" >
+            @csrf
+
+            <x-jet-dropdown-link href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                this.closest('form').submit();">
+            {{ __('Logout') }}
+            </x-jet-dropdown-link>
+          </form>
         </div>
       </div>
     </div>
