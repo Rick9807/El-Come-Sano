@@ -15,6 +15,7 @@
         <th>Vegano</th>
         <th>Carbohidratos</th>
         <th>Colesterol</th>
+        
     </tr>
 @endsection
 
@@ -30,6 +31,11 @@
             <td>{{ $platillo->plat_vegano }}</td>
             <td>{{ $platillo->plat_carbohidratos }}</td>
             <td>{{ $platillo->plat_colesterol }}</td>
+            <!--<td>
+                @foreach ($platillo->ingredientes as $ingrediente)
+                    {{ $ingrediente->ingre_nombre }} <br>
+                @endforeach
+            </td>-->
         </tr>
     @endforeach
 

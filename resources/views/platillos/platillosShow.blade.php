@@ -23,6 +23,8 @@
             <th>Vegano</th>
             <th>Carbohidratos</th>
             <th>Colesterol</th>
+            <th>Ingredientes</th>
+            <th>Consejos</th>
         </tr>
 @endsection
 
@@ -36,5 +38,15 @@
             <td>{{ $platillo->plat_vegano }}</td>
             <td>{{ $platillo->plat_carbohidratos }}</td>
             <td>{{ $platillo->plat_colesterol }}</td>
+            <td>
+                @foreach ($platillo->ingredientes as $ingrediente)
+                <a href="/ingredientes/{{$ingrediente->id}}"> {{ $ingrediente->ingre_nombre }}</a> <br>
+                @endforeach
+            </td>
+            <td>
+                @foreach ($platillo->consejo as $consejo)
+                    {{ $consejo->cons_contenido }} <br>
+                @endforeach
+            </td>
         </tr>
 @endsection

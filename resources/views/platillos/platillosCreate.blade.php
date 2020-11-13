@@ -12,7 +12,6 @@
     @else
         <form action="{{ route('platillos.store') }}" method="POST"> 
     @endif
-        <!--<form action="/platillos" method="POST">-->
             @csrf
             <label for="plat_nombre">Nombre</label>
             <input type="text" name="plat_nombre" value="{{ old('plat_nombre') ?? $platillo->plat_nombre ?? ''}}"> <br>
@@ -56,15 +55,13 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror <br>
 
-            @if (isset($consulta))
-                <label for="plat_ingredientes">Ingredientes</label><br>
-                @foreach ($consulta as $ingrediente)
-                    <input type="checkbox" id="{{$ingrediente->id}}" name="plat_ingredientes[]" value="{{$ingrediente->id}}">
-                    <label for="{{$ingrediente->id}}">{{$ingrediente->ingre_nombre}}</label><br>
-                @endforeach
-            @endif
+            <label for="ingredidente_id">Ingredientes</label><br>
+            <select name="ingrediente_id[]" multiple>
+            @foreach ($ingredientes as $ingrediente)
+                <option value="{{ $ingrediente->id }}" {{ in_array($ingrediente->id, $platillo->ingredientes()->pluck('id')->toArray()) ? 'selected': '' }} >{{ $ingrediente->ingre_nombre }}</option> 
+            @endforeach
+            </select> <br> <br>   
 
-            <br>
             <button type="submit" class='d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm'>Enviar</button>
         </form>
 

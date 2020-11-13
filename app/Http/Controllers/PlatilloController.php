@@ -26,8 +26,8 @@ class PlatilloController extends Controller
      */
     public function create()
     {
-        $consulta = Ingrediente::get();
-        return view('platillos/platillosCreate', compact('consulta'));
+        $ingredientes = Ingrediente::get();
+        return view('platillos/platillosCreate', compact('ingredientes'));
     }
 
     /**
@@ -38,6 +38,7 @@ class PlatilloController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
         $request->validate([
             'plat_nombre' => 'required|string',
             'plat_vegano' => 'required|string|max:2|min:2',
@@ -47,7 +48,8 @@ class PlatilloController extends Controller
             'plat_carbohidratos' => 'required|numeric',
             'plat_colesterol' => 'required|numeric',
         ]);
-        Platillo::create($request->all());
+        $platillo = Platillo::create($request->all());
+        $platillo->ingredientes()->attach($request->ingrediente_id);  //Aquí se agregan los registros a la tabla "pivote (ingrediente_platillo".
 
         return redirect('/platillos');
     }
@@ -71,7 +73,8 @@ class PlatilloController extends Controller
      */
     public function edit(Platillo $platillo)
     {
-        return view('platillos.platillosCreate', compact('platillo'));
+        $ingredientes = Ingrediente::get();
+        return view('platillos.platillosCreate', compact('platillo', 'ingredientes'));
     }
 
     /**
@@ -93,7 +96,9 @@ class PlatilloController extends Controller
             'plat_colesterol' => 'required|numeric',
         ]);
 
-        Platillo::where('id', $platillo->id)->update($request->except('_method','_token'));
+        Platillo::where('id', $platillo->id)->update($request->except('_method','_token','ingrediente_id'));
+
+        $platillo->ingredientes()->sync($request->ingrediente_id);
 
         return redirect()->route('platillos.show', [$platillo]);
     }

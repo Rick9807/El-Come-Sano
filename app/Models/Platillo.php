@@ -14,4 +14,9 @@ class Platillo extends Model
     public function consejo(){
         return $this->hasMany(Consejo::class);
     }
+
+    public function ingredientes(){
+        return $this->belongsToMany(Ingrediente::class);
+    }
+
 }
