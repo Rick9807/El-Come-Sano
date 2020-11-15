@@ -74,7 +74,8 @@
     </tr>
   </table>
     
-  <h1 class="mt-4">Generacion de dietas</h1>
+  <br>
+  
   <div style="text-align:center;">
     <button class="btn btn-primary">Generar Nueva Dieta Basada En Mis Datos</button>
   </div>

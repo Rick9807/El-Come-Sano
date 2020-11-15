@@ -43,7 +43,7 @@
       <li class="nav-item">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>Index</span></a>
       </li>
 
       <!-- Divider -->
@@ -51,10 +51,15 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Interface
+        Datos
       </div>
 
+      <li class="nav-item">
+        <span class="nav-link">Charts</span>
+      </li>
+
       <!-- Nav Item - Pages Collapse Menu -->
+      <!--
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
@@ -68,8 +73,9 @@
           </div>
         </div>
       </li>
-
+      -->
       <!-- Nav Item - Utilities Collapse Menu -->
+      <!--
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
@@ -85,16 +91,20 @@
           </div>
         </div>
       </li>
+      -->
 
       <!-- Divider -->
+      <!--
       <hr class="sidebar-divider">
-
+      -->
       <!-- Heading -->
+      <!--
       <div class="sidebar-heading">
         Addons
       </div>
-
+      -->
       <!-- Nav Item - Pages Collapse Menu -->
+      <!--
       <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
@@ -113,21 +123,23 @@
           </div>
         </div>
       </li>
-
+      -->
       <!-- Nav Item - Charts -->
+      <!--
       <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
       </li>
-
+      -->
       <!-- Nav Item - Tables -->
+      <!--
       <li class="nav-item">
         <a class="nav-link" href="tables.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
-
+      -->
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -154,6 +166,7 @@
           </button>
 
           <!-- Topbar Search -->
+          <!--
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -164,16 +177,19 @@
               </div>
             </div>
           </form>
-
+          -->
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <!--
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
               </a>
+              -->
               <!-- Dropdown - Messages -->
+              <!--
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
@@ -187,15 +203,20 @@
                 </form>
               </div>
             </li>
-
+            -->
             <!-- Nav Item - Alerts -->
+            <!--
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
+            -->
                 <!-- Counter - Alerts -->
+              <!--
                 <span class="badge badge-danger badge-counter">3+</span>
               </a>
+              -->
               <!-- Dropdown - Alerts -->
+              <!--
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
                   Alerts Center
@@ -236,15 +257,20 @@
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>
             </li>
-
+            -->
             <!-- Nav Item - Messages -->
+            <!--
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
+            -->
                 <!-- Counter - Messages -->
+                <!--
                 <span class="badge badge-danger badge-counter">7</span>
               </a>
+              -->
               <!-- Dropdown - Messages -->
+              <!--
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
                   Message Center
@@ -292,9 +318,10 @@
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
               </div>
             </li>
-
+            -->
+            <!--
             <div class="topbar-divider d-none d-sm-block"></div>
-
+            -->
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
