@@ -41,7 +41,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="#">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Index</span></a>
       </li>
@@ -54,9 +54,32 @@
         Datos
       </div>
 
-      <li class="nav-item">
-        <span class="nav-link">Charts</span>
-      </li>
+      <!-- Agregar edad -->
+      <form class="form-inline mr-auto w-100 navbar-search">
+        <br>
+        <div class="input-group-prepened">
+          <label for="edad_side" class="text-light mr-1">Edad</label>
+          <input type="number" class="form-control-sm bg-light border-0 small col-sm-9" placeholder="Edad..." name="edad_side">
+          <label for="peso_side" class="text-light mr-1">Peso</label>
+          <input type="number" class="form-control-sm bg-light border-0 small col-sm-9" placeholder="Peso..." name="peso_side">
+          <br>
+          <div class="form-check">
+            <label for="masculino" class="text-light mr-1 form-check-label">Masculino</label>
+            <input type="radio" name="Masculino" id="masculino" value="masculino" class="form-check-input">
+          </div>
+          <div class="form-check">
+            <label for="femenino" class="text-light mr-1 form-check-label">Femenino</label>
+            <input type="radio" name="Femenino" id="femenino" value="femenino" class="form-check-input">
+          </div>
+        </div>
+      </form>
+
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <h6 class="text-light mr-1">Calorias recomendadas</h6>
+      <div id="tmbCalculo">
+        
+      </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <!--
@@ -333,14 +356,6 @@
                 <a class="dropdown-item" href="{{ route('profile.show') }}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
