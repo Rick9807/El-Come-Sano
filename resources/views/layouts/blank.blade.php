@@ -65,11 +65,11 @@
           <br>
           <div class="form-check">
             <label for="masculino" class="text-light mr-1 form-check-label">Masculino</label>
-            <input type="radio" name="Masculino" id="masculino" value="masculino" class="form-check-input">
+            <input type="radio" name="sexo" id="masculino" value="masculino" class="form-check-input">
           </div>
           <div class="form-check">
             <label for="femenino" class="text-light mr-1 form-check-label">Femenino</label>
-            <input type="radio" name="Femenino" id="femenino" value="femenino" class="form-check-input">
+            <input type="radio" name="sexo" id="femenino" value="femenino" class="form-check-input">
           </div>
         </div>
       </form>
