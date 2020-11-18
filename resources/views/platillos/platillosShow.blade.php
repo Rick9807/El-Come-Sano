@@ -24,7 +24,6 @@
             <th>Carbohidratos</th>
             <th>Colesterol</th>
             <th>Ingredientes</th>
-            <th>Consejos</th>
         </tr>
 @endsection
 
@@ -43,10 +42,40 @@
                 <a href="/ingredientes/{{$ingrediente->id}}"> {{ $ingrediente->ingre_nombre }}</a> <br>
                 @endforeach
             </td>
-            <td>
-                @foreach ($platillo->consejo as $consejo)
-                    {{ $consejo->cons_contenido }} <br>
-                @endforeach
-            </td>
         </tr>
+@endsection
+
+
+
+@section('tabla_extra')
+<div class="container-fluid">
+   <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Consejos</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Consejo</th>
+                        </tr>
+                    </thead>
+                        <!--<tfoot>
+                            @yield('tabla_cabecera')
+                        </tfoot>-->
+                    <tbody>
+                        <tr>
+                            @foreach ($platillo->consejo as $consejo)
+                                <td> {{ $consejo->id }} </td>   
+                                <td> {{ $consejo->cons_contenido }} </td>  
+                            @endforeach
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

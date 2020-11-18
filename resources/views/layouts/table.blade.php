@@ -231,6 +231,8 @@
             </div>
           </div>
 
+          @yield('tabla_extra')
+
         </div>
         <!-- /.container-fluid -->
 
