@@ -18,6 +18,7 @@ class CreateConsejosTable extends Migration
             $table->foreignId('platillo_id');
             $table->string('cons_contenido', 255);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
