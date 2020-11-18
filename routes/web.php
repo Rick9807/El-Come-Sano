@@ -68,5 +68,5 @@ Route::get('/ingredientes/{ingrediente}', [IngredienteController::class, 'show']
 //Eliminar ingrediente
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return redirect('/ingredientes');
 })->name('dashboard');
