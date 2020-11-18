@@ -64,7 +64,7 @@ class ConsejoController extends Controller
      */
     public function show(Consejo $consejo)
     {
-        //
+        return view('consejos/consejoShow', compact('consejo'));
     }
 
     /**
@@ -98,6 +98,7 @@ class ConsejoController extends Controller
      */
     public function destroy(Consejo $consejo)
     {
-        //
+        $consejo->delete();
+        return redirect()->route('platillos.index');
     }
 }
