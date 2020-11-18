@@ -58,7 +58,11 @@
             <label for="ingredidente_id">Ingredientes</label><br>
             <select name="ingrediente_id[]" multiple>
             @foreach ($ingredientes as $ingrediente)
-                <option value="{{ $ingrediente->id }}" {{ in_array($ingrediente->id, $platillo->ingredientes()->pluck('id')->toArray()) ? 'selected': '' }} >{{ $ingrediente->ingre_nombre }}</option> 
+                @if (isset($platillo))
+                    <option value="{{ $ingrediente->id }}" {{ in_array($ingrediente->id, $platillo->ingredientes()->pluck('id')->toArray()) ? 'selected': '' }} >{{ $ingrediente->ingre_nombre }}</option> 
+                @else
+                    <option value="{{ $ingrediente->id }}">{{ $ingrediente->ingre_nombre }}</option> 
+                @endif
             @endforeach
             </select> <br> <br>   
 
