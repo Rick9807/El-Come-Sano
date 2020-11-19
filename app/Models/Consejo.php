@@ -15,4 +15,12 @@ class Consejo extends Model
     public function platillo(){
         return $this->belongsTo(Platillo::class);
     }
+
+    public function getConsContenidoAttribute($value){
+        return ucfirst(strtolower($value));
+    }
+
+    public function setConsContenidoAttribute($value){
+        $this->attributes['cons_contenido'] = mb_strtoupper($value, 'UTF-8');
+    }
 }

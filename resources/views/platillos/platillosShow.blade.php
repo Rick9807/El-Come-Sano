@@ -68,8 +68,10 @@
                     <tbody>
                         <tr>
                             @foreach ($platillo->consejo as $consejo)
-                                <td> {{ $consejo->id }} </td>   
-                                <td> {{ $consejo->cons_contenido }} </td>  
+                                <tr>
+                                    <td> {{ $consejo->id }} </td>   
+                                    <td> {{ $consejo->cons_contenido }} </td>
+                                </tr>   
                             @endforeach
                         </tr>
                     </tbody>
