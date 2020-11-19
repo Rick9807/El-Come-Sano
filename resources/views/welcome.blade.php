@@ -35,6 +35,39 @@
 
   <h1 class="mt-4">Dieta Actual</h1>
 
+  <?php
+
+    function buscar_platillo($calorias_restantes) {
+      $arreglo = array();
+      $precision = 0.05;
+      while( count($arreglo) == 0 ){
+        $min = $calorias_restantes * (1 - $precision) ;
+        $max = $calorias_restantes * (1 + $precision) ;
+        $arreglo = App\Models\Platillo::where([ ['plat_cal', '>', $min],['plat_cal', '<', $max], ])->get();
+        $precision += $precision;
+        if($precision == 1.05 ){ break; }
+      }
+      $ran = rand ( 0 , count($arreglo)-1 );
+      return $arreglo[$ran];
+    }
+
+    $calorias_dia = 1500;
+    $arreglo;
+
+    for($dia = 0; $dia < 7; $dia++){
+      $cal_res = $calorias_dia / 3;
+      for($com = 0; $com < 3; $com++){
+        $arreglo[$dia][$com] = buscar_platillo($cal_res);
+
+        if ( (3-($com+1)) != 0 ){
+          $cal_res = ($calorias_dia - $arreglo[$dia][$com]->plat_cal) / (3-($com+1));
+        }
+      }
+    }
+
+
+  ?>
+
   <table style="width:100%">
     <tr class="weekdays">
       <th>Lunes</th>
@@ -46,31 +79,25 @@
       <th>Domingo</th>
     </tr>
     <tr class="days">
-      <td>Cereal</td> 
-      <td>Cereal</td> 
-      <td>Cereal</td>  
-      <td>Cereal</td> 
-      <td>Cereal</td> 
-      <td>Cereal</td> 
-      <td>Cereal</td> 
+      <?php
+      for($i = 0; $i < 7; $i++){
+        echo "<td>".$arreglo[$i][0]->plat_nombre."</td>";
+      }
+      ?>
     </tr>
     <tr class="days">
-      <td>Hamburguesa</td> 
-      <td>Tacos</td> 
-      <td>Pollo</td> 
-      <td>Carne Asada</td> 
-      <td>Frijoles</td> 
-      <td>Pizza</td> 
-      <td>Pozole</td>
+      <?php
+      for($i = 0; $i < 7; $i++){
+        echo "<td>".$arreglo[$i][1]->plat_nombre."</td>";
+      }
+      ?>
     </tr>
     <tr class="days">
-      <td>Fruta</td> 
-      <td>Fruta</td>
-      <td>Fruta</td>
-      <td>Fruta</td>
-      <td>Fruta</td>
-      <td>Fruta</td> 
-      <td>Fruta</td>
+      <?php
+      for($i = 0; $i < 7; $i++){
+        echo "<td>".$arreglo[$i][2]->plat_nombre."</td>";
+      }
+      ?>
     </tr>
   </table>
     
@@ -84,19 +111,20 @@
   
   <div class="row">
 
+  @foreach ($platillos as $platillo)
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">2000 KCal</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">Hamburguesa</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="card border-left-primary shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">{{ $platillo->plat_cal }} Calorias</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $platillo->plat_nombre }}</div>
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
-      
+  @endforeach
 
   </div>
 

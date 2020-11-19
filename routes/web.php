@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Ingrediente;
+use App\Models\Platillo;
 use App\Http\Controllers\IngredienteController;
 use App\Http\Controllers\PlatilloController;
 use App\Http\Controllers\HistorialController;
@@ -19,7 +20,8 @@ use App\Http\Controllers\ConsejoController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  $platillos = Platillo::get();
+  return view('welcome', compact('platillos'));
 });
 
 Route::get('/inicio', function () {
