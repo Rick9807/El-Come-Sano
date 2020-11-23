@@ -32,9 +32,9 @@ Route::get('/inicio', function () {
 
 //CRUD ingredientes
 Route::resource('ingredientes', IngredienteController::class)->middleware(['auth:sanctum']);
-Route::resource('platillos', PlatilloController::class);
-Route::resource('historiales', HistorialController::class);
-Route::resource('consejos', ConsejoController::class);
+Route::resource('platillos', PlatilloController::class)->middleware(['auth:sanctum']);
+Route::resource('historiales', HistorialController::class)->middleware(['auth:sanctum']);
+Route::resource('consejos', ConsejoController::class)->middleware(['auth:sanctum']);
 
 /*Route::get('/ingredientes', function () {
   
