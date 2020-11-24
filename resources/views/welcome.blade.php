@@ -131,3 +131,63 @@
 <h1 class="mt-4">Ayuda Profesional</h1>
 
 @endsection
+
+@section('datosTMB')
+<div class="sidebar-heading">
+        Datos
+      </div>
+        
+        <br>
+
+        <div class="input-group-prepened">
+          <label for="edad_side" class="text-light mr-1">Edad</label>
+          <input id="edadCalculo" type="number" class="form-control-sm bg-light border-0 small col-sm-9" placeholder="Edad..." name="edad_side">
+          <label for="peso_side" class="text-light mr-1">Peso</label>
+          <input id="pesoCalculo" type="number" class="form-control-sm bg-light border-0 small col-sm-9" placeholder="Peso..." name="peso_side">
+          <br>
+          <div class="form-check">
+            <input type="radio" name="sexo" id="masculino" value="masculino" class="form-check-input">
+            <label for="masculino" class="text-light mr-1 form-check-label">Masculino</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" name="sexo" id="femenino" value="femenino" class="form-check-input">
+            <label for="femenino" class="text-light mr-1 form-check-label">Femenino</label>
+          </div>
+          <br>
+          <!-- opciones para la actividad fisica -->
+          <h7 class="text-light mr-1">Tipo de actividad fisica:</h7>
+          <div class="form-check">
+            <input type="radio" name="actividad" id="actividadMuyLigera" value="actividadMuyLigera" class="form-check-input">
+            <label for="actividadMuyLigera" class="text-light mr-1 form-check-label small">Actividad muy ligera</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" name="actividad" id="actividadLigera" value="actividadLigera" class="form-check-input">
+            <label for="actividadLigera" class="text-light mr-1 form-check-label small">Actividad ligera</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" name="actividad" id="actividadModerada" value="actividadModerada" class="form-check-input">
+            <label for="actividadModerada" class="text-light mr-1 form-check-label small">Actividad moderada</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" name="actividad" id="actividadActiva" value="actividadActiva" class="form-check-input">
+            <label for="actividadActiva" class="text-light mr-1 form-check-label small">Actividad activa</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" name="actividad" id="actividadMuyActiva" value="actividadMuyActiva" class="form-check-input">
+            <label for="actividadMuyActiva" class="text-light mr-1 form-check-label small">Actividad muy activa</label>
+          </div>
+
+        </div>
+        <div>
+          <button id="btnCalculo" class="btn btn-primary">Calcular</button>
+        </div>
+
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <h6 class="text-light mr-1">Calorias para mantener peso</h6>
+      <div id="tmbCalculo"></div>
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <script type="text/javascript" src="{{ URL::asset('js/sidebarCalculate.js') }}"></script>
+@endsection
