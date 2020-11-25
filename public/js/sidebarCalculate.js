@@ -1,3 +1,19 @@
+function createCookie(name, value, days) { 
+    var expires; 
+      
+    if (days) { 
+        var date = new Date(); 
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); 
+        expires = "; expires=" + date.toGMTString(); 
+    } 
+    else { 
+        expires = ""; 
+    } 
+      
+    document.cookie = escape(name) + "=" +  
+        escape(value) + expires + "; path=/"; 
+} 
+
 const formulaTMB = (pesoS, edadS, sexo) => {
     let peso = parseFloat(pesoS);
     let edad = parseInt(edadS);
@@ -78,11 +94,15 @@ const formulaTMB = (pesoS, edadS, sexo) => {
             break;
     }
     
-    
+    createCookie("tmb", tmb.toString(), 1);
+/*
     const tmbDiv = document.getElementById('tmbCalculo');
     const calTemplate = `
     <h6 class="text-light mr-1">${tmb.toFixed(3)}</h6>
     `;
     tmbDiv.innerHTML = calTemplate;
+*/
+    location.reload();
+    alert('Datos agregados!\nCalorias recomendadas para mantener su peso:\n' + tmb.toFixed(3));
   }
   document.getElementById('btnCalculo').addEventListener('click', calcular);
