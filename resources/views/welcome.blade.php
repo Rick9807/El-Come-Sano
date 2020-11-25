@@ -44,8 +44,8 @@
         $min = $calorias_restantes * (1 - $precision) ;
         $max = $calorias_restantes * (1 + $precision) ;
         $arreglo = App\Models\Platillo::where([ ['plat_cal', '>', $min],['plat_cal', '<', $max], ])->get();
-        $precision += $precision;
-        if($precision == 1.05 ){ break; }
+        $precision += 0.05;
+        if($precision > 1 ){ return NULL; }
       }
       $ran = rand ( 0 , count($arreglo)-1 );
       return $arreglo[$ran];
@@ -54,15 +54,32 @@
     $calorias_dia = 1500;
     $arreglo;
 
+    //Rellena el arreglo para los 7 dias de la semana
     for($dia = 0; $dia < 7; $dia++){
+
+      // cal_res es la cantidad ideal de calorias por comida = (calorias recomendadas por dia / 3)
       $cal_res = $calorias_dia / 3;
+
+      $cal_consumidas = 0;
+
+      //Rellena el arreglo para las 3 comidas del dia
       for($com = 0; $com < 3; $com++){
+
+        //Asignamos una platillo, al dia y comida correspondiente
         $arreglo[$dia][$com] = buscar_platillo($cal_res);
 
-        if ( (3-($com+1)) != 0 ){
-          $cal_res = ($calorias_dia - $arreglo[$dia][$com]->plat_cal) / (3-($com+1));
+        //Restamos las calorias que equivale el platillo seleccionado
+        if ( $arreglo[$dia][$com] ){
+          $cal_consumidas += $arreglo[$dia][$com]->plat_cal;
+          
+          if( 2-$com != 0 ){
+            $cal_res = ($calorias_dia - $arreglo[$dia][$com]->plat_cal) / 2-$com;
+          }
         }
       }
+
+      //Agregamos al arreglo el total de calorias consumidas este dia
+      $arreglo[$dia][3] = $cal_consumidas;
     }
 
 
@@ -81,30 +98,58 @@
     <tr class="days">
       <?php
       for($i = 0; $i < 7; $i++){
-        echo "<td>".$arreglo[$i][0]->plat_nombre."</td>";
+        if($arreglo[$i][0]){
+          echo "<td>".$arreglo[$i][0]->plat_nombre."</td>";
+        }
+        else{
+          echo "<td>Sin Platillos</td>";
+        }
       }
       ?>
     </tr>
     <tr class="days">
       <?php
       for($i = 0; $i < 7; $i++){
-        echo "<td>".$arreglo[$i][1]->plat_nombre."</td>";
+        if($arreglo[$i][1]){
+          echo "<td>".$arreglo[$i][1]->plat_nombre."</td>";
+        }
+        else{
+          echo "<td>Sin Platillos</td>";
+        }
       }
       ?>
     </tr>
     <tr class="days">
       <?php
       for($i = 0; $i < 7; $i++){
-        echo "<td>".$arreglo[$i][2]->plat_nombre."</td>";
+        if($arreglo[$i][2]){
+          echo "<td>".$arreglo[$i][2]->plat_nombre."</td>";
+        }
+        else{
+          echo "<td>Sin Platillos</td>";
+        }
       }
       ?>
     </tr>
+
+    <tr class="days">
+      <?php
+      for($i = 0; $i < 7; $i++){
+      
+        echo "<td>Total: ".$arreglo[$i][3]." calorias</td>";
+      
+      }
+      ?>
+    </tr>
+
   </table>
     
   <br>
   
   <div style="text-align:center;">
     <button class="btn btn-primary">Generar Nueva Dieta Basada En Mis Datos</button>
+
+    <button class="btn btn-primary">Guardar Esta Dieta Como Predeterminada</button>
   </div>
 
   <h1 class="mt-4">Top platillos nuevos</h1>
