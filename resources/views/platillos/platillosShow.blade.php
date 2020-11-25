@@ -69,8 +69,15 @@
                         <tr>
                             @foreach ($platillo->consejo as $consejo)
                                 <tr>
-                                    <td> {{ $consejo->id }} </td>   
+                                    <td style="width:60px;"> {{ $consejo->id }} </td>   
                                     <td> {{ $consejo->cons_contenido }} </td>
+                                    <td style="width:15px;"> 
+                                        <form action="{{ route('consejos.destroy', [$consejo]) }}", method='POST'>
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit">Eliminar</button>
+                                        </form>
+                                    </td>
                                 </tr>   
                             @endforeach
                         </tr>
