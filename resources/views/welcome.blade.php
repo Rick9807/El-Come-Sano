@@ -50,8 +50,16 @@
       $ran = rand ( 0 , count($arreglo)-1 );
       return $arreglo[$ran];
     }
+    if(!isset($_COOKIE["tmb"])) {
+      setcookie('tmb', '1500');
+      $_COOKIE['tmb'] = '1500';
+    }
 
-    $calorias_dia = 1500;
+
+    $calorias = $_COOKIE["tmb"];
+    
+    $calorias_dia = floatval($calorias);
+    
     $arreglo;
 
     //Rellena el arreglo para los 7 dias de la semana
@@ -224,15 +232,17 @@
 
         </div>
         <div>
-          <button id="btnCalculo" class="btn btn-primary">Calcular</button>
+          <button id="btnCalculo" class="boton btn btn-primary">Calcular</button>
         </div>
-
+      <br>
       <hr class="sidebar-divider d-none d-md-block">
-
+      <!--
       <h6 class="text-light mr-1">Calorias para mantener peso</h6>
       <div id="tmbCalculo"></div>
+      -->
       <!-- Divider -->
+      <!--
       <hr class="sidebar-divider d-none d-md-block">
-
+      -->
       <script type="text/javascript" src="{{ URL::asset('js/sidebarCalculate.js') }}"></script>
 @endsection
