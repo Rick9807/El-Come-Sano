@@ -198,13 +198,14 @@
           <label for="peso_side" class="text-light mr-1">Peso</label>
           <input id="pesoCalculo" type="number" class="form-control-sm bg-light border-0 small col-sm-9" placeholder="Peso..." name="peso_side">
           <br>
+          <br>
           <div class="form-check">
             <input type="radio" name="sexo" id="masculino" value="masculino" class="form-check-input">
-            <label for="masculino" class="text-light mr-1 form-check-label">Masculino</label>
+            <i class="fas fa-male"></i> <label for="masculino" class="text-light mr-1 form-check-label">Masculino</label> 
           </div>
           <div class="form-check">
             <input type="radio" name="sexo" id="femenino" value="femenino" class="form-check-input">
-            <label for="femenino" class="text-light mr-1 form-check-label">Femenino</label>
+            <i class="fas fa-female"></i> <label for="femenino" class="text-light mr-1 form-check-label">Femenino</label>
           </div>
           <br>
           <!-- opciones para la actividad fisica -->
@@ -232,7 +233,9 @@
 
         </div>
         <div>
+        <center>
           <button id="btnCalculo" class="boton btn btn-primary">Calcular</button>
+          </center>
         </div>
       <br>
       <hr class="sidebar-divider d-none d-md-block">

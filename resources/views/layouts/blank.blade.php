@@ -31,9 +31,9 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+        <img src="https://i.ibb.co/SfmKBfw/Come-Sano.png" alt="Come-Sano" width="100 px" >
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">El Come Sano</div>
       </a>
 
       <!-- Divider -->
@@ -42,8 +42,18 @@
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Index</span></a>
+          <i class="fas fa-brain"></i>
+          <span>Inicio</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://el-come-sano.test/platillos">
+          <i class="fas fa-carrot"></i>
+          <span>Platillos</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://el-come-sano.test/ingredientes">
+          <i class="fas fa-apple-alt"></i>
+          <span>Ingredientes</span></a>
       </li>
 
       <!-- Divider -->
