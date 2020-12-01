@@ -53,3 +53,11 @@
 <!--</body>
 
 </html> -->
+
+@section('admin')
+    <a class="dropdown-item" href="{{ route('platillos.index') }}">
+        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+        Admin
+    </a>
+    <div class="dropdown-divider"></div>
+@endsection
