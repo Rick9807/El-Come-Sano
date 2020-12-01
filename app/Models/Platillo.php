@@ -19,4 +19,16 @@ class Platillo extends Model
         return $this->belongsToMany(Ingrediente::class);
     }
 
+    public function getPlatNombreAttribute($value){
+        return ucfirst(strtolower($value));
+    }
+    
+    public function getPlatDescAttribute($value){
+        return ucfirst(strtolower($value));
+    }
+
+    public function getPlatVeganoAttribute($value){
+        return ucfirst(strtolower($value));
+    }
+
 }
