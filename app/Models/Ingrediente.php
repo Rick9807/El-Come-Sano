@@ -15,4 +15,21 @@ class Ingrediente extends Model
         return $this->belongsToMany(Platillo::class);
     }
 
+    public function getIngreNombreAttribute($value){
+        return ucfirst(strtolower($value));
+    }
+
+    public function getIngreTipoAttribute($value){
+        return ucfirst(strtolower($value));
+    }
+
+    public function getIngreMarcaAttribute($value){
+        return ucfirst(strtolower($value));
+    }
+
+    public function getIngreVegaAttribute($value){
+        return ucfirst(strtolower($value));
+    }
+    
+
 }
