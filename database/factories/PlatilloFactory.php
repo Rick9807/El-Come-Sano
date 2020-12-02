@@ -2,17 +2,18 @@
 
 namespace Database\Factories;
 
+use App\Models\Platillo;
 use App\Models\Ingrediente;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class IngredienteFactory extends Factory
+class PlatilloFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Ingrediente::class;
+    protected $model = Platillo::class;
 
     /**
      * Define the model's default state.
@@ -22,14 +23,13 @@ class IngredienteFactory extends Factory
     public function definition()
     {
         return [
-            'ingre_nombre' => $this->faker->word(),
-            'ingre_cal' => $this->faker->randomFloat(1,0,200),
-            'ingre_tipo' => $this->faker->word(),
-            'ingre_marca' => $this->faker->word(),
-            //'ingre_vega' => $this->faker->lexify('??'),
-            'ingre_azucares' => $this->faker->randomFloat(1,0,200),
-            'ingre_carbohidratos' => $this->faker->randomFloat(1,0,200),
-            'ingre_colesterol' => $this->faker->randomFloat(1,0,200),
+            'plat_nombre' => $this->faker->word(),
+            'plat_cal' => $this->faker->randomFloat(1,500,1500),
+            'plat_desc' => $this->faker->paragraph(),
+            //'plat_vegano' => $this->faker->lexify('??'),
+            'plat_azucares' => $this->faker->randomFloat(1,500,1500),
+            'plat_carbohidratos' => $this->faker->randomFloat(1,500,1500),
+            'plat_colesterol' => $this->faker->randomFloat(1,500,1500),
         ];
     }
 
@@ -37,7 +37,7 @@ class IngredienteFactory extends Factory
     {
         return $this->state(function (array $attributes) {
             return [
-                'ingre_vega' => 'Si',
+                'plat_vegano' => 'Si',
             ];
         });
     }
@@ -46,7 +46,7 @@ class IngredienteFactory extends Factory
     {
         return $this->state(function (array $attributes) {
             return [
-                'ingre_vega' => 'No',
+                'plat_vegano' => 'No',
             ];
         });
     }
