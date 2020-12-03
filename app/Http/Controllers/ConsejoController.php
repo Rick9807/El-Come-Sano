@@ -85,9 +85,15 @@ class ConsejoController extends Controller
      * @param  \App\Models\Consejo  $consejo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Consejo $consejo)
+    public function update(Request $request, $consejo)
     {
-        //
+        $request->validate([
+            'cons_contenido' => 'required|string|min:3|max:255',
+        ]);
+
+        Consejo::where('id', $consejo)->update($request->except('_method','_token'));
+
+        return redirect('/platillos/'.Consejo::where('id', $consejo)->first()->platillo_id);
     }
 
     /**

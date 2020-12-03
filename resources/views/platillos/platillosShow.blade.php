@@ -83,9 +83,10 @@
                 }
             </style>
 
-            <div class="form-popup" id="myForm">
-            <form action="{{ route('consejos.store') }}" method="POST" class="form-container" id="editableform">
+            <div class="form-popup" id="creatediv">
+            <form action="{{ route('consejos.store') }}" method="POST" class="form-container" id="createform">
                 <h1>Consejo</h1>
+                
                 @csrf
                 <input type="hidden" value="{{ $platillo->id }}" name="platillo_id" />
 
@@ -97,13 +98,35 @@
             </form>
             </div>
 
+            <div class="form-popup" id="editdiv">
+            <form action="{{ route('consejos.store') }}" method="POST" class="form-container" id="editform">
+            @method('patch')
+                <h1>Consejo</h1>
+                
+                @csrf
+                <input type="hidden" value="{{ $platillo->id }}" name="platillo_id" />
+
+                <label for="cons_contenido"><b>Contenido</b></label>
+                <input type="text" placeholder="Ingresa el Consejo" name="cons_contenido" required>
+
+                <button type="submit" class='d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm' style="width:49%;" id="subform">Editar</button>
+                <button type="button" class='d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm' style="width:49%;" onclick="closeForm()">Cancelar</button>
+            </form>
+            </div>
+
             <script>
             function openForm() {
-            document.getElementById("myForm").style.display = "block";
+                document.getElementById("creatediv").style.display = "block";
+            }
+
+            function editForm( action ) {
+                document.getElementById("editform").action = action;
+                document.getElementById("editdiv").style.display = "block";
             }
 
             function closeForm() {
-            document.getElementById("myForm").style.display = "none";
+            document.getElementById("creatediv").style.display = "none";
+            document.getElementById("editdiv").style.display = "none";
             }
             </script>
 
@@ -136,8 +159,8 @@
                                         <button class='d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm' type="submit">Eliminar</button>
                                     </form>
                                 </td>
-                                <td style="width:10%;">
-                                    <a  class='d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm'>Editar Consejo</a>
+                                <td style="width:10%;"> 
+                                    <a onclick="editForm( '/consejos/'+{{$consejo->id}} )" class='d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm'>Editar Consejo</a>
                                 </td>
                             </tr>   
                         @endforeach
