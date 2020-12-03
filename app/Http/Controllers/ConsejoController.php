@@ -53,7 +53,7 @@ class ConsejoController extends Controller
         $consejo->save();
 
         //Redireccionar
-        return redirect('/consejos');
+        return redirect('/platillos/'.$request->platillo_id);
     }
 
     /**
@@ -99,6 +99,6 @@ class ConsejoController extends Controller
     public function destroy(Consejo $consejo)
     {
         $consejo->delete();
-        return redirect()->route('platillos.index');
+        return redirect('/platillos/'.$consejo->platillo_id);
     }
 }
