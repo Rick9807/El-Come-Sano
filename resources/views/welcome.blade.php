@@ -183,6 +183,7 @@
           </div>
       </div>
     </div>
+    @break($loop->iteration == 8)
   @endforeach
 
   </div>
