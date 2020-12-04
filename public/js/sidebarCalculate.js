@@ -106,3 +106,4 @@ const formulaTMB = (pesoS, edadS, sexo) => {
     alert('Datos agregados!\nCalorias recomendadas para mantener su peso:\n' + tmb.toFixed(3));
   }
   document.getElementById('btnCalculo').addEventListener('click', calcular);
+  

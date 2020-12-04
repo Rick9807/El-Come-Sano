@@ -58,7 +58,12 @@
 
     $calorias = $_COOKIE["tmb"];
     
-    $calorias_dia = floatval($calorias);
+    if ($calorias != "1500") {
+      echo "<h1>Calorias/día: ". intval($calorias). "</h1>";
+    }
+    
+
+    $calorias_dia = intval($calorias);
     
     $arreglo;
 
@@ -155,9 +160,10 @@
   <br>
   
   <div style="text-align:center;">
-    <button class="btn btn-primary">Generar Nueva Dieta Basada En Mis Datos</button>
-
+    <button class="btn btn-primary" id="btnRecargar">Generar Nueva Dieta Basada En Mis Datos</button>
+    <!--
     <button class="btn btn-primary">Guardar Esta Dieta Como Predeterminada</button>
+    -->
   </div>
 
   <h1 class="mt-4">Top platillos nuevos</h1>
@@ -182,7 +188,7 @@
   </div>
 
 <h1 class="mt-4">Ayuda Profesional</h1>
-
+<script type="text/javascript" src="{{ URL::asset('js/recargar.js') }}"></script>
 @endsection
 
 @section('datosTMB')
