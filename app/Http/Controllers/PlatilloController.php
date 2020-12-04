@@ -26,7 +26,7 @@ class PlatilloController extends Controller
      */
     public function create()
     {
-        $ingredientes = Ingrediente::get();
+        $ingredientes = Ingrediente::orderby('ingre_nombre')->get();
         return view('platillos/platillosCreate', compact('ingredientes'));
     }
 

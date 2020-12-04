@@ -39,12 +39,12 @@
 
     function buscar_platillo($calorias_restantes) {
       $arreglo = array();
-      $precision = 0.05;
+      $precision = 0.15;
       while( count($arreglo) == 0 ){
         $min = $calorias_restantes * (1 - $precision) ;
         $max = $calorias_restantes * (1 + $precision) ;
         $arreglo = App\Models\Platillo::where([ ['plat_cal', '>', $min],['plat_cal', '<', $max], ])->get();
-        $precision += 0.05;
+        $precision += 0.1;
         if($precision > 1 ){ return NULL; }
       }
       $ran = rand ( 0 , count($arreglo)-1 );
