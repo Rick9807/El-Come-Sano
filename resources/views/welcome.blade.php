@@ -58,7 +58,12 @@
 
     $calorias = $_COOKIE["tmb"];
     
-    $calorias_dia = floatval($calorias);
+    if ($calorias != "1500") {
+      echo "<h1>Calorias/día: ". intval($calorias). "</h1>";
+    }
+    
+
+    $calorias_dia = intval($calorias);
     
     $arreglo;
 
