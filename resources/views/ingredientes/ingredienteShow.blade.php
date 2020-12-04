@@ -12,13 +12,13 @@
 @section('titulo')
     <h1>Ingrediente</h1>
     <!--<a href="/ingredientes/{{ $ingrediente->id }}/edit">Editar ingrediente</a> -->
-    <a href={{ action([\App\Http\Controllers\IngredienteController::class, 'index']) }}>Regresar</a>
-    <a href="{{ route('ingredientes.edit', [$ingrediente->id]) }}">Editar ingrediente</a>
+    <a href={{ action([\App\Http\Controllers\IngredienteController::class, 'index']) }} class='d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm'>Regresar</a>
+    <a href="{{ route('ingredientes.edit', [$ingrediente->id]) }}" class='d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm'>Editar ingrediente</a>
 
-    <form action="{{ route('ingredientes.destroy', [$ingrediente]) }}", method='POST'>
+    <form action="{{ route('ingredientes.destroy', [$ingrediente]) }}", method='POST' style='display:inline-block'>
         @method('DELETE')
         @csrf
-        <button type="submit">Eliminar</button>
+        <button type="submit" class='d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm'>Eliminar</button>
     </form>
 @endsection
 

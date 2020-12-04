@@ -72,10 +72,11 @@
             @enderror <br>
 
             <br>
-            <button type="submit">Enviar</button>
+            <button type="submit" class='d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm'>Enviar</button>
         </form>
 
-        <a href="{{ route('ingredientes.index') }}">Cancelar</a>
+        <br>
+        <a href="{{ route('ingredientes.index') }}" class='d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm'>Cancelar</a>
 @endsection
 <!--</body>
 
