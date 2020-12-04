@@ -39,12 +39,12 @@
 
     function buscar_platillo($calorias_restantes) {
       $arreglo = array();
-      $precision = 0.05;
+      $precision = 0.15;
       while( count($arreglo) == 0 ){
         $min = $calorias_restantes * (1 - $precision) ;
         $max = $calorias_restantes * (1 + $precision) ;
         $arreglo = App\Models\Platillo::where([ ['plat_cal', '>', $min],['plat_cal', '<', $max], ])->get();
-        $precision += 0.05;
+        $precision += 0.1;
         if($precision > 1 ){ return NULL; }
       }
       $ran = rand ( 0 , count($arreglo)-1 );
@@ -160,9 +160,10 @@
   <br>
   
   <div style="text-align:center;">
-    <button class="btn btn-primary">Generar Nueva Dieta Basada En Mis Datos</button>
-
+    <button class="btn btn-primary" id="btnRecargar">Generar Nueva Dieta Basada En Mis Datos</button>
+    <!--
     <button class="btn btn-primary">Guardar Esta Dieta Como Predeterminada</button>
+    -->
   </div>
 
   <h1 class="mt-4">Top platillos nuevos</h1>
@@ -187,7 +188,7 @@
   </div>
 
 <h1 class="mt-4">Ayuda Profesional</h1>
-
+<script type="text/javascript" src="{{ URL::asset('js/recargar.js') }}"></script>
 @endsection
 
 @section('datosTMB')
