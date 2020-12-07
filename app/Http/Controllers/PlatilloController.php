@@ -15,7 +15,7 @@ class PlatilloController extends Controller
      */
     public function index()
     {
-        $consulta = Platillo::get();
+        $consulta = Platillo::with('ingredientes')->get();
         return view('platillos/platillosIndex', compact('consulta'));
     }
 
