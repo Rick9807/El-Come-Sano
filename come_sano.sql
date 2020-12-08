@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         localhost
--- Server version:               5.7.24 - MySQL Community Server (GPL)
--- Server OS:                    Win64
--- HeidiSQL Version:             10.2.0.5599
+-- Versión del servidor:         5.7.24 - MySQL Community Server (GPL)
+-- SO del servidor:              Win64
+-- HeidiSQL Versión:             9.5.0.5332
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -11,7 +11,7 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping structure for table come_sano.consejos
+-- Volcando estructura para tabla come_sano.consejos
 DROP TABLE IF EXISTS `consejos`;
 CREATE TABLE IF NOT EXISTS `consejos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -23,12 +23,12 @@ CREATE TABLE IF NOT EXISTS `consejos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.consejos: ~0 rows (approximately)
+-- Volcando datos para la tabla come_sano.consejos: ~0 rows (aproximadamente)
 DELETE FROM `consejos`;
 /*!40000 ALTER TABLE `consejos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `consejos` ENABLE KEYS */;
 
--- Dumping structure for table come_sano.dietas
+-- Volcando estructura para tabla come_sano.dietas
 DROP TABLE IF EXISTS `dietas`;
 CREATE TABLE IF NOT EXISTS `dietas` (
   `plat_id` bigint(20) unsigned NOT NULL,
@@ -41,12 +41,12 @@ CREATE TABLE IF NOT EXISTS `dietas` (
   CONSTRAINT `dietas_us_id_foreign` FOREIGN KEY (`us_id`) REFERENCES `usuarios` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.dietas: ~0 rows (approximately)
+-- Volcando datos para la tabla come_sano.dietas: ~0 rows (aproximadamente)
 DELETE FROM `dietas`;
 /*!40000 ALTER TABLE `dietas` DISABLE KEYS */;
 /*!40000 ALTER TABLE `dietas` ENABLE KEYS */;
 
--- Dumping structure for table come_sano.failed_jobs
+-- Volcando estructura para tabla come_sano.failed_jobs
 DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE IF NOT EXISTS `failed_jobs` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -60,12 +60,12 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
   UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.failed_jobs: ~0 rows (approximately)
+-- Volcando datos para la tabla come_sano.failed_jobs: ~0 rows (aproximadamente)
 DELETE FROM `failed_jobs`;
 /*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
 /*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
 
--- Dumping structure for table come_sano.historiales
+-- Volcando estructura para tabla come_sano.historiales
 DROP TABLE IF EXISTS `historiales`;
 CREATE TABLE IF NOT EXISTS `historiales` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -85,12 +85,12 @@ CREATE TABLE IF NOT EXISTS `historiales` (
   CONSTRAINT `historiales_us_id_foreign` FOREIGN KEY (`us_id`) REFERENCES `usuarios` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.historiales: ~0 rows (approximately)
+-- Volcando datos para la tabla come_sano.historiales: ~0 rows (aproximadamente)
 DELETE FROM `historiales`;
 /*!40000 ALTER TABLE `historiales` DISABLE KEYS */;
 /*!40000 ALTER TABLE `historiales` ENABLE KEYS */;
 
--- Dumping structure for table come_sano.ingredientes
+-- Volcando estructura para tabla come_sano.ingredientes
 DROP TABLE IF EXISTS `ingredientes`;
 CREATE TABLE IF NOT EXISTS `ingredientes` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -105,9 +105,9 @@ CREATE TABLE IF NOT EXISTS `ingredientes` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.ingredientes: ~4 rows (approximately)
+-- Volcando datos para la tabla come_sano.ingredientes: ~75 rows (aproximadamente)
 DELETE FROM `ingredientes`;
 /*!40000 ALTER TABLE `ingredientes` DISABLE KEYS */;
 INSERT INTO `ingredientes` (`id`, `ingre_nombre`, `ingre_cal`, `ingre_tipo`, `ingre_marca`, `ingre_vega`, `ingre_azucares`, `ingre_carbohidratos`, `ingre_colesterol`, `created_at`, `updated_at`) VALUES
@@ -159,10 +159,36 @@ INSERT INTO `ingredientes` (`id`, `ingre_nombre`, `ingre_cal`, `ingre_tipo`, `in
 	(46, 'Nata para cocinar', 189.00, 'Lacteo', '', 'No', 3.70, 4.40, 0.00, '2020-12-08 03:12:17', '2020-12-08 03:12:17'),
 	(47, 'Kiwi', 46.00, 'Fruta', '', 'No', 6.80, 11.20, 0.00, '2020-12-08 03:21:55', '2020-12-08 03:21:55'),
 	(48, 'Mango', 107.00, '107', '', 'Si', 25.00, 28.00, 0.00, '2020-12-08 03:22:54', '2020-12-08 03:22:54'),
-	(49, 'Esparragos', 20.00, 'Planta', '', 'Si', 2.00, 4.00, 0.00, '2020-12-08 03:28:23', '2020-12-08 03:28:23');
+	(49, 'Esparragos', 20.00, 'Planta', '', 'Si', 2.00, 4.00, 0.00, '2020-12-08 03:28:23', '2020-12-08 03:28:23'),
+	(50, 'Queso parmesano', 392.00, 'Producto lácteo', '', 'No', 0.80, 3.22, 68.00, '2020-12-08 08:31:50', '2020-12-08 08:31:50'),
+	(51, 'Caldo de pollo', 12.00, 'Condimento', '', 'No', 0.70, 1.51, 0.00, '2020-12-08 08:36:52', '2020-12-08 08:36:52'),
+	(52, 'Aceite de oliva', 884.00, 'Grasa líquida', '', 'Si', 0.00, 0.00, 0.00, '2020-12-08 08:42:21', '2020-12-08 08:42:21'),
+	(53, 'Tomillo', 101.00, 'Hierba', '', 'Si', 0.00, 24.50, 0.00, '2020-12-08 08:44:59', '2020-12-08 08:44:59'),
+	(54, 'Pimienta negra', 0.00, 'Fruta', NULL, 'Si', 0.00, 0.06, 0.00, '2020-12-08 08:48:11', '2020-12-08 09:34:50'),
+	(55, 'Lasagna', 154.00, 'Pasta', NULL, 'Si', 2.43, 17.08, 19.00, '2020-12-08 09:05:51', '2020-12-08 09:07:10'),
+	(56, 'Puerro', 321.00, 'Hortaliza', '', 'Si', 0.00, 74.70, 0.00, '2020-12-08 09:09:56', '2020-12-08 09:09:56'),
+	(57, 'Pimiento rojo', 26.00, 'Verdura', '', 'Si', 4.20, 6.03, 0.00, '2020-12-08 09:13:14', '2020-12-08 09:13:14'),
+	(58, 'Pimiento verde', 20.00, 'Verdura', '', 'Si', 2.40, 4.64, 0.00, '2020-12-08 09:14:05', '2020-12-08 09:14:05'),
+	(59, 'Orégano', 306.00, 'Hierba', NULL, 'Si', 4.09, 64.43, 0.00, '2020-12-08 09:18:32', '2020-12-08 09:50:54'),
+	(60, 'Harina', 364.00, 'Harina', '', 'Si', 0.27, 76.31, 0.00, '2020-12-08 09:28:55', '2020-12-08 09:28:55'),
+	(61, 'Nuez Moscada', 525.00, 'Fruta', '', 'Si', 28.49, 49.29, 0.00, '2020-12-08 09:32:20', '2020-12-08 09:32:20'),
+	(62, 'Pimienta blanca', 0.00, 'Fruta', '', 'Si', 0.00, 0.03, 0.00, '2020-12-08 09:38:15', '2020-12-08 09:38:15'),
+	(63, 'Cilantro', 23.00, 'Hierba', '', 'Si', 0.87, 3.67, 0.00, '2020-12-08 09:53:03', '2020-12-08 09:53:03'),
+	(64, 'Chile serrano', 32.00, 'Chile', '', 'Si', 4.06, 6.70, 0.00, '2020-12-08 09:55:24', '2020-12-08 09:55:24'),
+	(65, 'Guindilla', 47.20, 'Chile', '', 'Si', 0.20, 6.70, 0.00, '2020-12-08 10:23:30', '2020-12-08 10:23:30'),
+	(66, 'Chorizo', 333.00, 'Embutido', '', 'No', 0.00, 2.85, 74.00, '2020-12-08 10:25:27', '2020-12-08 10:25:27'),
+	(67, 'Papa', 77.00, 'Tubérculo', '', 'Si', 0.78, 17.47, 0.00, '2020-12-08 10:27:22', '2020-12-08 10:27:22'),
+	(68, 'Hoja de laurel', 313.00, 'Planta', '', 'Si', 0.00, 75.00, 0.00, '2020-12-08 10:30:51', '2020-12-08 10:30:51'),
+	(69, 'Cava', 75.00, 'Vino', '', 'No', 0.87, 2.58, 0.00, '2020-12-08 10:42:53', '2020-12-08 10:42:53'),
+	(70, 'Alga wakame', 45.00, 'Alga comestible', '', 'Si', 0.00, 9.10, 0.00, '2020-12-08 10:45:21', '2020-12-08 10:45:21'),
+	(71, 'Pan rallado', 395.00, 'Pan', '', 'Si', 6.20, 71.98, 0.00, '2020-12-08 11:07:49', '2020-12-08 11:07:49'),
+	(72, 'Calabacín', 16.00, 'Hortaliza', '', 'Si', 1.73, 3.35, 0.00, '2020-12-08 11:44:38', '2020-12-08 11:44:38'),
+	(73, 'Champiñones', 22.00, 'Hongo', '', 'Si', 1.65, 3.28, 0.00, '2020-12-08 11:46:14', '2020-12-08 11:46:14'),
+	(74, 'Lomo de cerdo', 136.00, 'Cerdo', '', 'No', 0.00, 0.00, 66.00, '2020-12-08 12:00:02', '2020-12-08 12:00:02'),
+	(75, 'Clavo de olor', 274.00, 'Hierba aromática', '', 'Si', 2.40, 65.50, 0.00, '2020-12-08 12:04:07', '2020-12-08 12:04:07');
 /*!40000 ALTER TABLE `ingredientes` ENABLE KEYS */;
 
--- Dumping structure for table come_sano.ingrediente_platillo
+-- Volcando estructura para tabla come_sano.ingrediente_platillo
 DROP TABLE IF EXISTS `ingrediente_platillo`;
 CREATE TABLE IF NOT EXISTS `ingrediente_platillo` (
   `platillo_id` bigint(20) unsigned NOT NULL,
@@ -173,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `ingrediente_platillo` (
   CONSTRAINT `ingrediente_platillo_platillo_id_foreign` FOREIGN KEY (`platillo_id`) REFERENCES `platillos` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.ingrediente_platillo: ~36 rows (approximately)
+-- Volcando datos para la tabla come_sano.ingrediente_platillo: ~173 rows (aproximadamente)
 DELETE FROM `ingrediente_platillo`;
 /*!40000 ALTER TABLE `ingrediente_platillo` DISABLE KEYS */;
 INSERT INTO `ingrediente_platillo` (`platillo_id`, `ingrediente_id`) VALUES
@@ -184,12 +210,17 @@ INSERT INTO `ingrediente_platillo` (`platillo_id`, `ingrediente_id`) VALUES
 	(1, 3),
 	(9, 3),
 	(10, 3),
+	(23, 3),
 	(1, 4),
 	(10, 4),
 	(15, 4),
+	(26, 4),
 	(1, 5),
 	(2, 5),
 	(13, 5),
+	(22, 5),
+	(24, 5),
+	(28, 5),
 	(1, 6),
 	(2, 6),
 	(2, 7),
@@ -198,13 +229,26 @@ INSERT INTO `ingrediente_platillo` (`platillo_id`, `ingrediente_id`) VALUES
 	(16, 8),
 	(2, 9),
 	(18, 9),
+	(22, 9),
+	(23, 9),
+	(24, 9),
+	(25, 9),
+	(27, 9),
+	(28, 9),
+	(29, 9),
 	(2, 10),
 	(2, 11),
+	(22, 11),
+	(28, 11),
+	(30, 11),
 	(2, 12),
 	(9, 12),
+	(27, 12),
 	(2, 13),
 	(3, 14),
 	(20, 14),
+	(22, 14),
+	(23, 14),
 	(3, 15),
 	(4, 16),
 	(10, 16),
@@ -212,12 +256,20 @@ INSERT INTO `ingrediente_platillo` (`platillo_id`, `ingrediente_id`) VALUES
 	(17, 16),
 	(18, 16),
 	(20, 16),
+	(23, 16),
+	(26, 16),
+	(30, 16),
 	(4, 17),
+	(22, 17),
 	(5, 18),
+	(25, 18),
+	(26, 18),
 	(5, 19),
 	(13, 19),
 	(15, 19),
 	(18, 19),
+	(29, 19),
+	(30, 19),
 	(5, 20),
 	(10, 20),
 	(11, 20),
@@ -226,21 +278,42 @@ INSERT INTO `ingrediente_platillo` (`platillo_id`, `ingrediente_id`) VALUES
 	(15, 20),
 	(18, 20),
 	(20, 20),
+	(21, 20),
+	(22, 20),
+	(23, 20),
+	(24, 20),
+	(25, 20),
+	(26, 20),
+	(28, 20),
+	(29, 20),
+	(30, 20),
 	(15, 21),
+	(22, 22),
+	(23, 22),
 	(9, 24),
 	(12, 27),
+	(30, 27),
 	(8, 28),
 	(19, 28),
 	(8, 29),
 	(8, 30),
+	(29, 30),
 	(8, 31),
 	(14, 31),
 	(10, 32),
+	(21, 32),
 	(11, 33),
 	(12, 33),
+	(21, 33),
+	(24, 33),
+	(25, 33),
+	(27, 33),
+	(29, 33),
+	(30, 33),
 	(11, 34),
 	(11, 35),
 	(11, 37),
+	(21, 37),
 	(11, 38),
 	(12, 38),
 	(13, 39),
@@ -248,18 +321,64 @@ INSERT INTO `ingrediente_platillo` (`platillo_id`, `ingrediente_id`) VALUES
 	(14, 41),
 	(15, 41),
 	(16, 41),
+	(29, 41),
 	(14, 42),
 	(14, 43),
 	(16, 44),
+	(21, 44),
 	(17, 45),
 	(17, 46),
 	(19, 46),
+	(21, 46),
 	(19, 47),
 	(19, 48),
-	(20, 49);
+	(20, 49),
+	(21, 50),
+	(25, 50),
+	(26, 50),
+	(21, 51),
+	(21, 52),
+	(22, 52),
+	(24, 52),
+	(25, 52),
+	(27, 52),
+	(28, 52),
+	(21, 53),
+	(23, 54),
+	(25, 54),
+	(28, 54),
+	(29, 54),
+	(22, 55),
+	(22, 56),
+	(30, 56),
+	(22, 57),
+	(24, 57),
+	(22, 58),
+	(24, 58),
+	(22, 59),
+	(22, 60),
+	(23, 60),
+	(30, 60),
+	(22, 61),
+	(23, 61),
+	(29, 61),
+	(22, 62),
+	(24, 65),
+	(24, 66),
+	(24, 67),
+	(27, 67),
+	(24, 68),
+	(25, 69),
+	(25, 70),
+	(26, 71),
+	(28, 72),
+	(30, 72),
+	(28, 73),
+	(29, 74),
+	(29, 75);
 /*!40000 ALTER TABLE `ingrediente_platillo` ENABLE KEYS */;
 
--- Dumping structure for table come_sano.migrations
+-- Volcando estructura para tabla come_sano.migrations
 DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE IF NOT EXISTS `migrations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -268,7 +387,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.migrations: ~0 rows (approximately)
+-- Volcando datos para la tabla come_sano.migrations: ~13 rows (aproximadamente)
 DELETE FROM `migrations`;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -287,7 +406,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(13, '2020_11_13_175441_create_ingrediente_platillo_table', 1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 
--- Dumping structure for table come_sano.password_resets
+-- Volcando estructura para tabla come_sano.password_resets
 DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -296,12 +415,12 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.password_resets: ~0 rows (approximately)
+-- Volcando datos para la tabla come_sano.password_resets: ~0 rows (aproximadamente)
 DELETE FROM `password_resets`;
 /*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
 /*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
 
--- Dumping structure for table come_sano.personal_access_tokens
+-- Volcando estructura para tabla come_sano.personal_access_tokens
 DROP TABLE IF EXISTS `personal_access_tokens`;
 CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -318,12 +437,12 @@ CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
   KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.personal_access_tokens: ~0 rows (approximately)
+-- Volcando datos para la tabla come_sano.personal_access_tokens: ~0 rows (aproximadamente)
 DELETE FROM `personal_access_tokens`;
 /*!40000 ALTER TABLE `personal_access_tokens` DISABLE KEYS */;
 /*!40000 ALTER TABLE `personal_access_tokens` ENABLE KEYS */;
 
--- Dumping structure for table come_sano.platillos
+-- Volcando estructura para tabla come_sano.platillos
 DROP TABLE IF EXISTS `platillos`;
 CREATE TABLE IF NOT EXISTS `platillos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -337,9 +456,9 @@ CREATE TABLE IF NOT EXISTS `platillos` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.platillos: ~0 rows (approximately)
+-- Volcando datos para la tabla come_sano.platillos: ~30 rows (aproximadamente)
 DELETE FROM `platillos`;
 /*!40000 ALTER TABLE `platillos` DISABLE KEYS */;
 INSERT INTO `platillos` (`id`, `plat_nombre`, `plat_cal`, `plat_azucares`, `plat_desc`, `plat_vegano`, `plat_carbohidratos`, `plat_colesterol`, `created_at`, `updated_at`) VALUES
@@ -362,10 +481,20 @@ INSERT INTO `platillos` (`id`, `plat_nombre`, `plat_cal`, `plat_azucares`, `plat
 	(17, 'Flan de queso', 300.00, 29.00, 'Postre para terminar cualquier comida con mucho sabor.', 'No', 32.00, 100.00, '2020-12-08 03:14:36', '2020-12-08 03:14:36'),
 	(18, 'Huevo con cebolla', 89.00, 0.40, 'Platillo que se adapta para cualquier momento del dia.', 'No', 0.50, 210.00, '2020-12-08 03:17:55', '2020-12-08 03:17:55'),
 	(19, 'Macedonia tropical', 48.00, 9.70, 'Deliciosa macedonia con frutas tropicales para epocas calurosas', 'No', 10.00, 0.00, '2020-12-08 03:25:34', '2020-12-08 03:25:34'),
-	(20, 'Mousse de espárragos', 167.00, 2.00, 'Delicioso mousse de esparragos con pocos ingredientes para una receta economica.', 'No', 6.00, 0.00, '2020-12-08 03:30:51', '2020-12-08 03:30:51');
+	(20, 'Mousse de espárragos', 167.00, 2.00, 'Delicioso mousse de esparragos con pocos ingredientes para una receta economica.', 'No', 6.00, 0.00, '2020-12-08 03:30:51', '2020-12-08 03:30:51'),
+	(21, 'Pollo con salsa de limón y espinacas', 530.52, 2.36, 'Plato de pollo y espinacas,  la salsa de limón y espinacas le dan un toque fascinante a las pechugas, y las hace más jugosas y sabrosas.', 'No', 18.93, 130.00, '2020-12-08 08:59:32', '2020-12-08 08:59:32'),
+	(22, 'Lasaña de atún y verduras', 508.00, 8.02, 'Deliciosa lasaña de atún y verduras muy sencilla, rica y saludable.', 'No', 41.67, 31.80, '2020-12-08 09:48:58', '2020-12-08 09:50:23'),
+	(23, 'Croquetas de huevos duros y atún', 374.00, 7.16, 'Plato sencillo que podemos acompañar de una ensalada.', 'No', 24.32, 168.00, '2020-12-08 10:13:00', '2020-12-08 10:13:00'),
+	(24, 'Papas con chorizo a la riojana', 584.80, 7.14, 'Guiso tradicional ideal para tomar en los meses fríos porque resultan reconfortantes, son muy fáciles de preparar y gracias al chorizo y los condimentos tienen un sabor riquísimo.', 'No', 46.60, 59.00, '2020-12-08 10:34:49', '2020-12-08 10:34:49'),
+	(25, 'Risotto de alga wakame al cava', 404.82, 2.15, 'El risotto es un clásico de la cocina italiana que suele complacer a la mayoría de los paladares.', 'No', 31.19, 0.00, '2020-12-08 11:01:39', '2020-12-08 11:01:39'),
+	(26, 'Bolas de arroz con jamón y queso', 305.00, 0.50, 'Económico y sano, el arroz es un ingrediente que puede prepararse de muchas maneras.', 'No', 32.90, 207.00, '2020-12-08 11:12:34', '2020-12-08 11:12:34'),
+	(27, 'Ensalada templada de papa', 473.00, 3.51, 'Se trata de un plato cargado de ingredientes que nos van a aportar una amplia variedad de nutrientes.', 'No', 47.37, 170.00, '2020-12-08 11:21:08', '2020-12-08 11:21:08'),
+	(28, 'Canelones de calabacín rellenos', 294.00, 4.35, 'Los canelones de calabacín están buenísimos y con este relleno de queso de cabra, champiñones y tomate son irresistibles.', 'No', 7.90, 6.62, '2020-12-08 11:52:21', '2020-12-08 11:52:21'),
+	(29, 'Lomo mechado con piña', 704.90, 30.60, 'Receta exótica y muy sabrosa ideal para celebraciones como Navidad o Fin de año.', 'No', 46.47, 96.70, '2020-12-08 12:08:21', '2020-12-08 12:08:21'),
+	(30, 'Buñuelos de calabacín y queso fresco', 301.50, 3.97, 'Estos buñuelos ó tortitas son muy sabrosos, crujientes por fuera y suaves por dentro, ideal como aperitivo ó como un primer plato.', 'No', 23.16, 32.00, '2020-12-08 12:15:07', '2020-12-08 12:15:07');
 /*!40000 ALTER TABLE `platillos` ENABLE KEYS */;
 
--- Dumping structure for table come_sano.sessions
+-- Volcando estructura para tabla come_sano.sessions
 DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE IF NOT EXISTS `sessions` (
   `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -379,15 +508,14 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   KEY `sessions_last_activity_index` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.sessions: ~0 rows (approximately)
+-- Volcando datos para la tabla come_sano.sessions: ~1 rows (aproximadamente)
 DELETE FROM `sessions`;
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-	('KA6YdxhSkmme3pbZs9N5MSOKh0cPehDfvIJLYc8M', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36 Edg/87.0.664.55', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiUmhjOFM3MWs3d05xdzFHcWZMTGRIdDBiMWg5VGI5MW9Bd0Q1WWozSSI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czo0MToiaHR0cDovL2VsLWNvbWUtc2Fuby50ZXN0L3BsYXRpbGxvcy9jcmVhdGUiO31zOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozMzoiaHR0cDovL2VsLWNvbWUtc2Fuby50ZXN0L3JlZ2lzdGVyIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1607393899),
-	('qNrFN2CAapOMH4hGnl1IyLeg0r0SHDWEWfHAU56b', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36 Edg/87.0.664.55', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiWG44NGN0b3dPN0o2U3E5bVg5YkxBajNyMjFFeFNnbElpcjhueUxzciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly9lbC1jb21lLXNhbm8udGVzdC9wbGF0aWxsb3MiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkUFJsVzhMczM1R0gwcWhpRUx6aTlvLnR5bGlHVnVsZk5aZHptNzBTLjZOVE9Ga2s1QXRLSk8iO3M6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJFBSbFc4THMzNUdIMHFoaUVMemk5by50eWxpR1Z1bGZOWmR6bTcwUy42TlRPRmtrNUF0S0pPIjt9', 1607398252);
+	('Zpn6ndcY5J7cWEMix5yr4u9JyL0MVgbZkU1GusQt', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoieGptVzBOcEgxRlBLRnNjRENTOVF1RTRFWHBLWnZZam1QMXU1NlpwQiI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjM0OiJodHRwOi8vZWwtY29tZS1zYW5vLnRlc3QvcGxhdGlsbG9zIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJFFNU2FMaVAzRHBncTZidDBrdS81Zy5Fb0VEWENzMTBuL0dwVlBhM2FKbjY2RTBmdGwwZFFlIjtzOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCRRTVNhTGlQM0RwZ3E2YnQwa3UvNWcuRW9FRFhDczEwbi9HcFZQYTNhSm42NkUwZnRsMGRRZSI7fQ==', 1607429708);
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 
--- Dumping structure for table come_sano.users
+-- Volcando estructura para tabla come_sano.users
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -406,7 +534,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.users: ~0 rows (approximately)
+-- Volcando datos para la tabla come_sano.users: ~2 rows (aproximadamente)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
@@ -414,7 +542,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `tw
 	(2, 'Luis', 'luis@comesano.com', NULL, '$2y$10$PRlW8Ls35GH0qhiELzi9o.tyliGVulfNZdzm70S.6NTOFkk5AtKJO', NULL, NULL, NULL, NULL, NULL, '2020-12-08 02:18:19', '2020-12-08 02:18:19');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
--- Dumping structure for table come_sano.usuarios
+-- Volcando estructura para tabla come_sano.usuarios
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -431,7 +559,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table come_sano.usuarios: ~0 rows (approximately)
+-- Volcando datos para la tabla come_sano.usuarios: ~0 rows (aproximadamente)
 DELETE FROM `usuarios`;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
