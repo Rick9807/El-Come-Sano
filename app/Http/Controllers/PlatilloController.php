@@ -51,7 +51,11 @@ class PlatilloController extends Controller
         $platillo = Platillo::create($request->all());
         $platillo->ingredientes()->attach($request->ingrediente_id);  //Aquí se agregan los registros a la tabla "pivote (ingrediente_platillo".
 
-        return redirect('/platillos');
+        return redirect('/platillos')
+            ->with(
+                ['mensaje' => 'Se ha registrado el platillo exitosamente.',
+                'alert-type' => 'alert-success',
+            ]);
     }
 
     /**
@@ -100,7 +104,11 @@ class PlatilloController extends Controller
 
         $platillo->ingredientes()->sync($request->ingrediente_id);
 
-        return redirect()->route('platillos.show', [$platillo]);
+        return redirect()->route('platillos.show', [$platillo])
+            ->with(
+                ['mensaje' => 'Actualización exitosa',
+                'alert-type' => 'alert-success',
+            ]);
     }
 
     /**

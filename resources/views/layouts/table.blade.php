@@ -222,6 +222,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
+          @include('partials.mensajeExito')
           <h1 class="h3 mb-2 text-gray-800">Tablas</h1>
           <p class="mb-4">A continuación se muestra una tabla con los registros solicitados.</a>.</p>
 
